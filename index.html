@@ -2,9 +2,28 @@
 <head>
 <script>
 var parentVar = 'parent';
+function iframeRef( frameRef ) {
+    return frameRef.contentWindow
+        ? frameRef.contentWindow.document
+        : frameRef.contentDocument
+}
+
 </script>
 </head>
 <body>
-testt2
+  <h1>Testing Sandbox</h1>
+  <iframe sandbox="allow-same-origin allow-scripts"
+    src="http://jsaddict.tk/"
+    style="border: 1; width:100px; height:20px;" id="sandbox1"></iframe>
+  <iframe sandbox="allow-top-navigation allow-scripts"
+    src="http://jsaddict.tk/"
+    style="border: 1; width:100px; height:20px;" id="sandbox2"></iframe>
+  <script>
+    
+    var sb1 = iframeRef( document.getElementById('sandbox1'));
+    var sb2 = iframeRef( document.getElementById('sandbox2'));
+    console.log('parent sb1', typeof(sb1), sb1);
+    console.log('parent sb2', typeof(sb2), sb2);
+  </script>
 </body>
 </html>
