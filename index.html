@@ -19,6 +19,15 @@ function iframeRef( frameRef ) {
     src="https://jsaddict.tk/"
     style="border: 1; width:100px; height:20px;" id="sandbox2"></iframe>
   <script>
+  <iframe sandbox="allow-same-origin allow-scripts"
+    src="https://jsaddict.github.io/test3/"
+    style="border: 1; width:100px; height:20px;" id="sandbox3"></iframe>
+  <iframe sandbox="allow-top-navigation allow-scripts"
+    src="https://jsaddict.github.io/test3/"
+    style="border: 1; width:100px; height:20px;" id="sandbox4"></iframe>
+  <script>
+  <script>
+    
     
     var sb1 = iframeRef( document.getElementById('sandbox1'));
     var sb2 = iframeRef( document.getElementById('sandbox2'));
